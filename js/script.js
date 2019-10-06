@@ -14,7 +14,7 @@ function createTweet(input) {
     var data = input[0];
 
     var dataElement = document.createElement('div');
-    dataElement.innerHTML = data.content;
+    dataElement.innerHTML = data.content.rendered;
     var quoteText = dataElement.innerText.trim();
     var quoteAuthor = data.title;
 
@@ -22,7 +22,7 @@ function createTweet(input) {
         quoteAuthor = "Unknown author";
     }
 
-	var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+	var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor.author;
     
     if (tweetText.length > 140) {
         getQuote();

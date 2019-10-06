@@ -3,7 +3,7 @@ var tweetLink = "https://twitter.com/intent/tweet?text=";
 var quoteUrl = "https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand&_=1570288279003";
 
 function getQuote(){
-	fetch(prefix + quoteUrl, { cache: "no-store"})
+	fetch(prefix + quoteUrl, { cache: "no-store" })
 		.then(function(resp){
 			return resp.json();
 		})
@@ -33,7 +33,7 @@ function createTweet(input) {
     	document.querySelector('.author').innerText = "Author: " + quoteAuthor;
     	document.querySelector('.tweet').setAttribute('href', tweet);
     }
-}
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     getQuote();
